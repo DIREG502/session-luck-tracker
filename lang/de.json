@@ -1,0 +1,152 @@
+{
+  "SLT": {
+    "Title": "Session Luck Tracker",
+    "Speaker": "Glücks-Tracker",
+    "Controls": {
+      "Toggle": "Glückszählung: Start / Stopp",
+      "Sessions": "Glücks-Tracker: Sitzungen und Archiv"
+    },
+    "Notify": {
+      "Started": "Glücks-Tracker: Zählung gestartet.",
+      "Stopped": "Glücks-Tracker: Zählung beendet. {dice} Würfel von {players} Spieler(n) erfasst.",
+      "Resumed": "Glücks-Tracker: aktive Sitzung wiederhergestellt, Zählung läuft weiter.",
+      "AlreadyActive": "Glücks-Tracker: Es wird bereits eine Sitzung gezählt.",
+      "NotActive": "Glücks-Tracker: Es wird keine Sitzung gezählt.",
+      "GMOnly": "Glücks-Tracker: Nur ein SL kann das tun.",
+      "Reset": "Glücks-Tracker: Daten der aktuellen Sitzung wurden gelöscht.",
+      "HistoryCleared": "Glücks-Tracker: Sitzungsarchiv geleert.",
+      "SessionDeleted": "Glücks-Tracker: archivierte Sitzung gelöscht.",
+      "SessionNotFound": "Glücks-Tracker: Sitzung nicht gefunden.",
+      "Error": "Glücks-Tracker: Etwas ist schiefgelaufen, siehe Konsole (F12)."
+    },
+    "Chat": {
+      "StartedTitle": "Glückszählung gestartet",
+      "StartedBody": "Ab jetzt zählt jeder Wurf. Mögen die Würfel gnädig sein!",
+      "ReportTitle": "Glücksbericht der Sitzung",
+      "InterimTitle": "Glücksbericht (Sitzung läuft)",
+      "ArchivedTitle": "Glücksbericht (archivierte Sitzung)",
+      "Meta": "{world} · {date}",
+      "Duration": "Dauer: {duration}",
+      "NoRolls": "In dieser Sitzung wurden keine Würfe erfasst."
+    },
+    "Duration": {
+      "HoursMinutes": "{hours} Std. {minutes} Min.",
+      "Minutes": "{minutes} Min.",
+      "LessThanMinute": "weniger als eine Minute"
+    },
+    "Awards": {
+      "Luckiest": "Glückspilz",
+      "Unluckiest": "Pechvogel",
+      "MostNat20": "Meiste natürliche 20en",
+      "MostNat1": "Meiste natürliche 1en",
+      "HotStreak": "Längste Glückssträhne (11+)",
+      "ColdStreak": "Längste Pechsträhne (10 oder weniger)",
+      "MeanValue": "Ø {mean} · z {z}",
+      "IndexValue": "Index {index}",
+      "Times": "×{count}",
+      "Streak": "{count} in Folge",
+      "None": "Noch nicht genug Würfe für Auszeichnungen (mindestens {min} pro Spieler)."
+    },
+    "Table": {
+      "Player": "Spieler",
+      "PlayerHint": "Spieler (Charakter)",
+      "D20": "W20",
+      "D20Hint": "Anzahl der W20-Ergebnisse",
+      "Mean": "Ø",
+      "MeanHint": "Durchschnittliches W20-Ergebnis (erwartet 10,5)",
+      "Nat20": "20",
+      "Nat20Hint": "Natürliche 20en",
+      "Nat1": "1",
+      "Nat1Hint": "Natürliche 1en",
+      "Deviation": "Δ",
+      "DeviationHint": "Gesamtabweichung von 10,5 über alle W20-Würfe",
+      "Index": "Idx",
+      "IndexHint": "Universeller Glücksindex: mittlere normierte Abweichung über alle Würfel (0 = Durchschnitt, ±1 = eine Standardabweichung)",
+      "IndexDetail": "{count} Würfel · z {z}",
+      "CritSuccess": "KE",
+      "CritSuccessHint": "Kritische Erfolge (PF2e)",
+      "CritFailure": "KF",
+      "CritFailureHint": "Kritische Fehlschläge (PF2e)",
+      "ZHint": "z-Wert: {z}",
+      "NotEligible": "* weniger als {min} Würfe: nicht berechtigt für Glückspilz / Pechvogel"
+    },
+    "Summary": {
+      "Dice": "Gewürfelt: {dice} Würfel in {messages} Wurfnachricht(en)",
+      "D20": "W20: {count} Würfe, Tischdurchschnitt {mean} (erwartet {expected}), z {z}",
+      "Nats": "Natürliche 20en: {nat20} · natürliche 1en: {nat1}",
+      "Outcomes": "Erfolgsgrade: {cs} kritischer Erfolg · {s} Erfolg · {f} Fehlschlag · {cf} kritischer Fehlschlag",
+      "RankingD20": "Rangfolge: durchschnittliches W20-Ergebnis.",
+      "RankingIndex": "Rangfolge: universeller Glücksindex über alle Würfel."
+    },
+    "Settings": {
+      "IncludeGM": {
+        "Name": "SL-Würfe einbeziehen",
+        "Hint": "Auch Würfe von SL-Benutzern zählen. Standardmäßig werden nur Spieler gezählt."
+      },
+      "IncludeHidden": {
+        "Name": "Verdeckte und blinde Würfe einbeziehen",
+        "Hint": "Private, nur-SL-, Selbst- und blinde Würfe der Spieler zählen."
+      },
+      "IncludeDamage": {
+        "Name": "Schadenswürfe einbeziehen",
+        "Hint": "Würfel aus Schadens- und Heilungswürfen zählen. Standardmäßig aus, da der W20 die wichtigste Glückskennzahl ist."
+      },
+      "IgnoreFlatChecks": {
+        "Name": "Pauschale Würfe ignorieren (PF2e)",
+        "Hint": "Pauschale Würfe (Flat Checks) in Pathfinder 2e nicht zählen."
+      },
+      "D20Only": {
+        "Name": "Rangfolge nur nach W20",
+        "Hint": "Spieler nach ihrem durchschnittlichen W20-Ergebnis ordnen. Wenn deaktiviert, wird der universelle Index über alle Würfel verwendet."
+      },
+      "MinRolls": {
+        "Name": "Mindestanzahl Würfe für Auszeichnungen",
+        "Hint": "Spieler mit weniger Würfen (W20-Würfen bei W20-Rangfolge) erscheinen in der Tabelle, können aber nicht Glückspilz / Pechvogel werden."
+      },
+      "PostTo": {
+        "Name": "Ergebnisse senden an",
+        "Hint": "Wer die Statistik-Nachrichten erhält.",
+        "Everyone": "Alle (öffentliche Nachricht)",
+        "GM": "Nur SL (geflüstert)"
+      },
+      "AnnounceStart": {
+        "Name": "Sitzungsbeginn im Chat ankündigen",
+        "Hint": "Beim Start der Zählung eine kurze Chatnachricht senden."
+      },
+      "ArchiveSize": {
+        "Name": "Größe des Sitzungsarchivs",
+        "Hint": "Wie viele beendete Sitzungen im Archiv aufbewahrt werden."
+      }
+    },
+    "Menu": {
+      "Name": "Sitzungen und Archiv",
+      "Label": "Öffnen",
+      "Hint": "Zählung starten oder beenden, Zwischenstände posten und vergangene Sitzungen erneut posten."
+    },
+    "History": {
+      "Title": "Glücks-Tracker",
+      "GMOnly": "Nur ein SL kann die Glückszählung verwalten.",
+      "Current": "Aktuelle Sitzung",
+      "CurrentMeta": "Zählung seit {date} ({duration}) · {players} Spieler · {d20} W20 · Ø {mean}",
+      "NoCurrent": "Es wird keine Sitzung gezählt.",
+      "Start": "Zählung starten",
+      "Stop": "Beenden und posten",
+      "PostInterim": "Zwischenstand posten",
+      "Reset": "Zurücksetzen",
+      "Archive": "Archiv ({count}/{max})",
+      "Empty": "Noch keine archivierten Sitzungen.",
+      "ItemMeta": "{duration} · {players} Spieler · {d20} W20 · Ø {mean}",
+      "Post": "Posten",
+      "Delete": "Löschen",
+      "ClearAll": "Archiv leeren",
+      "ConfirmStopTitle": "Glückszählung beenden?",
+      "ConfirmStopBody": "Die Sitzung wird beendet und archiviert, und ihre Statistik wird im Chat gepostet.",
+      "ConfirmResetTitle": "Aktuelle Sitzung zurücksetzen?",
+      "ConfirmResetBody": "Alle bisher in dieser Sitzung erfassten Würfe werden verworfen. Die Zählung läuft weiter.",
+      "ConfirmDeleteTitle": "Archivierte Sitzung löschen?",
+      "ConfirmDeleteBody": "Die Sitzung vom {date} löschen? Dies kann nicht rückgängig gemacht werden.",
+      "ConfirmClearTitle": "Archiv leeren?",
+      "ConfirmClearBody": "Alle archivierten Sitzungen werden gelöscht. Dies kann nicht rückgängig gemacht werden."
+    }
+  }
+}

@@ -1,0 +1,291 @@
+/* Session Luck Tracker
+ * Colors come from Foundry CSS variables where they exist (v13 theme tokens,
+ * v12 fallbacks) and otherwise derive from currentColor, so the card follows
+ * both the light and the dark theme. */
+
+.slt-card,
+.slt-app {
+  --slt-text: var(--color-text-primary, inherit);
+  --slt-muted: var(--color-text-secondary, var(--color-text-dark-secondary, color-mix(in srgb, currentColor 65%, transparent)));
+  --slt-border: var(--color-border, color-mix(in srgb, currentColor 22%, transparent));
+  --slt-tint: color-mix(in srgb, currentColor 6%, transparent);
+  --slt-tint-strong: color-mix(in srgb, currentColor 11%, transparent);
+  --slt-good: var(--color-level-success, #2f7d32);
+  --slt-bad: var(--color-level-error, #b3261e);
+  --slt-accent: var(--color-warm-2, var(--color-text-hyperlink, #c9593f));
+}
+
+/* Dark theme (v13 body/app theme classes): brighter accents for contrast. */
+.theme-dark .slt-card,
+.theme-dark .slt-app,
+.slt-card.theme-dark,
+.slt-app.theme-dark {
+  --slt-good: #7bd17f;
+  --slt-bad: #ff8a80;
+}
+
+/* ---------------------------------------------------------------- Card */
+
+.slt-card {
+  color: var(--slt-text);
+  font-size: var(--font-size-13, 13px);
+  line-height: 1.35;
+}
+
+.slt-card .slt-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding-bottom: 0.35em;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid var(--slt-border);
+}
+
+.slt-card .slt-header-icon {
+  font-size: 1.6em;
+  line-height: 1;
+}
+
+.slt-card .slt-title {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.slt-card .slt-meta,
+.slt-card .slt-muted,
+.slt-app .slt-muted,
+.slt-card .slt-footnote,
+.slt-card .slt-char {
+  color: var(--slt-muted);
+  font-size: 0.9em;
+}
+
+.slt-card .slt-footnote {
+  margin: 0.25em 0 0;
+  font-style: italic;
+}
+
+.slt-card--compact .slt-header {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* -------------------------------------------------------------- Awards */
+
+.slt-card .slt-awards {
+  list-style: none;
+  margin: 0 0 0.5em;
+  padding: 0;
+  display: grid;
+  gap: 0.25em;
+}
+
+.slt-card .slt-award {
+  display: grid;
+  grid-template-columns: 1.8em 1fr auto;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.25em 0.4em;
+  border-radius: 4px;
+  background: var(--slt-tint);
+  border-left: 3px solid var(--slt-border);
+}
+
+.slt-card .slt-award--lucky { border-left-color: var(--slt-good); background: var(--slt-tint-strong); }
+.slt-card .slt-award--unlucky { border-left-color: var(--slt-bad); background: var(--slt-tint-strong); }
+.slt-card .slt-award--nat20,
+.slt-card .slt-award--hot { border-left-color: var(--slt-good); }
+.slt-card .slt-award--nat1,
+.slt-card .slt-award--cold { border-left-color: var(--slt-bad); }
+
+.slt-card .slt-award-icon {
+  font-size: 1.35em;
+  text-align: center;
+  line-height: 1;
+}
+
+.slt-card .slt-award-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.slt-card .slt-award-label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--slt-muted);
+}
+
+.slt-card .slt-award-winner {
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.slt-card .slt-award-value {
+  font-size: 0.85em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------- Table */
+
+.slt-card .slt-table-wrap {
+  overflow-x: auto;
+  margin: 0.25em 0;
+}
+
+.slt-card .slt-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  border: none;
+  background: transparent;
+  font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+}
+
+.slt-card .slt-table th,
+.slt-card .slt-table td {
+  padding: 0.2em 0.25em;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid var(--slt-border);
+  background: transparent;
+  color: inherit;
+}
+
+.slt-card .slt-table thead th {
+  font-weight: bold;
+  background: var(--slt-tint-strong);
+  cursor: help;
+  white-space: nowrap;
+}
+
+.slt-card .slt-table tbody tr:nth-child(even) td {
+  background: var(--slt-tint);
+}
+
+.slt-card .slt-table .slt-col-player {
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.slt-card .slt-table tr.slt-ineligible td {
+  opacity: 0.7;
+}
+
+.slt-card .slt-marker {
+  margin-left: 0.15em;
+  color: var(--slt-muted);
+  cursor: help;
+}
+
+.slt-card .slt-dot {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-right: 0.3em;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: var(--slt-border);
+  border: 1px solid var(--slt-border);
+}
+
+.slt-card .slt-good { color: var(--slt-good); font-weight: bold; }
+.slt-card .slt-bad { color: var(--slt-bad); font-weight: bold; }
+
+/* ------------------------------------------------------------- Summary */
+
+.slt-card .slt-summary {
+  margin-top: 0.4em;
+  padding-top: 0.3em;
+  border-top: 1px solid var(--slt-border);
+  font-size: 0.85em;
+  color: var(--slt-muted);
+  display: grid;
+  gap: 0.1em;
+}
+
+/* --------------------------------------------------------- Sessions app */
+
+.slt-app .window-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slt-app .slt-app-section h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05em;
+  border: none;
+}
+
+.slt-app .slt-app-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.slt-app .slt-app-status {
+  margin: 0 0 0.4rem;
+}
+
+.slt-app .slt-app-status i {
+  font-size: 0.7em;
+  vertical-align: middle;
+  color: var(--slt-muted);
+}
+
+.slt-app .slt-app-status--on i {
+  color: var(--slt-good);
+}
+
+.slt-app .slt-app-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.slt-app .slt-btn {
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+}
+
+.slt-app .slt-app-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.slt-app .slt-app-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--slt-border);
+  border-radius: 4px;
+  background: var(--slt-tint);
+}
+
+.slt-app .slt-app-item-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 0.9em;
+}
+
+.slt-app .slt-app-item-meta span {
+  color: var(--slt-muted);
+}

@@ -1,0 +1,152 @@
+{
+  "SLT": {
+    "Title": "Session Luck Tracker",
+    "Speaker": "Session Luck Tracker",
+    "Controls": {
+      "Toggle": "Luck tracking: start / stop",
+      "Sessions": "Luck tracker: sessions and archive"
+    },
+    "Notify": {
+      "Started": "Session Luck Tracker: tracking started.",
+      "Stopped": "Session Luck Tracker: tracking stopped. Recorded {dice} dice from {players} player(s).",
+      "Resumed": "Session Luck Tracker: active session restored, tracking resumed.",
+      "AlreadyActive": "Session Luck Tracker: a session is already being tracked.",
+      "NotActive": "Session Luck Tracker: no session is being tracked.",
+      "GMOnly": "Session Luck Tracker: only a GM can do this.",
+      "Reset": "Session Luck Tracker: data of the current session was cleared.",
+      "HistoryCleared": "Session Luck Tracker: session archive cleared.",
+      "SessionDeleted": "Session Luck Tracker: archived session deleted.",
+      "SessionNotFound": "Session Luck Tracker: session not found.",
+      "Error": "Session Luck Tracker: something went wrong, see the console (F12)."
+    },
+    "Chat": {
+      "StartedTitle": "Luck tracking started",
+      "StartedBody": "Every dice roll counts from now on. May the dice be kind!",
+      "ReportTitle": "Session Luck Report",
+      "InterimTitle": "Luck Report (session in progress)",
+      "ArchivedTitle": "Luck Report (archived session)",
+      "Meta": "{world} · {date}",
+      "Duration": "Duration: {duration}",
+      "NoRolls": "No dice rolls were recorded in this session."
+    },
+    "Duration": {
+      "HoursMinutes": "{hours} h {minutes} min",
+      "Minutes": "{minutes} min",
+      "LessThanMinute": "less than a minute"
+    },
+    "Awards": {
+      "Luckiest": "Luckiest",
+      "Unluckiest": "Unluckiest",
+      "MostNat20": "Most natural 20s",
+      "MostNat1": "Most natural 1s",
+      "HotStreak": "Longest hot streak (11+)",
+      "ColdStreak": "Longest cold streak (10 or less)",
+      "MeanValue": "avg {mean} · z {z}",
+      "IndexValue": "index {index}",
+      "Times": "×{count}",
+      "Streak": "{count} in a row",
+      "None": "Not enough rolls for awards yet (at least {min} per player)."
+    },
+    "Table": {
+      "Player": "Player",
+      "PlayerHint": "Player (character)",
+      "D20": "d20",
+      "D20Hint": "Number of d20 results",
+      "Mean": "Avg",
+      "MeanHint": "Mean d20 result (expected 10.5)",
+      "Nat20": "20",
+      "Nat20Hint": "Natural 20s",
+      "Nat1": "1",
+      "Nat1Hint": "Natural 1s",
+      "Deviation": "Δ",
+      "DeviationHint": "Total deviation from 10.5 over all d20 rolls",
+      "Index": "Idx",
+      "IndexHint": "Universal luck index: mean normalized deviation over all dice (0 = average, ±1 = one standard deviation)",
+      "IndexDetail": "{count} dice · z {z}",
+      "CritSuccess": "CS",
+      "CritSuccessHint": "Critical successes (PF2e)",
+      "CritFailure": "CF",
+      "CritFailureHint": "Critical failures (PF2e)",
+      "ZHint": "z-score: {z}",
+      "NotEligible": "* fewer than {min} rolls: not eligible for Luckiest / Unluckiest"
+    },
+    "Summary": {
+      "Dice": "Dice rolled: {dice} in {messages} roll message(s)",
+      "D20": "d20: {count} rolls, table mean {mean} (expected {expected}), z {z}",
+      "Nats": "Natural 20s: {nat20} · natural 1s: {nat1}",
+      "Outcomes": "Degrees of success: {cs} critical success · {s} success · {f} failure · {cf} critical failure",
+      "RankingD20": "Ranking: mean d20 result.",
+      "RankingIndex": "Ranking: universal luck index over all dice."
+    },
+    "Settings": {
+      "IncludeGM": {
+        "Name": "Include GM rolls",
+        "Hint": "Also count dice rolled by GM users. By default only players are counted."
+      },
+      "IncludeHidden": {
+        "Name": "Include hidden and blind rolls",
+        "Hint": "Count private, GM-only, self and blind rolls made by players."
+      },
+      "IncludeDamage": {
+        "Name": "Include damage rolls",
+        "Hint": "Count dice from damage and healing rolls. Off by default because the d20 is the main luck metric."
+      },
+      "IgnoreFlatChecks": {
+        "Name": "Ignore flat checks (PF2e)",
+        "Hint": "Do not count Pathfinder 2e flat checks."
+      },
+      "D20Only": {
+        "Name": "Rank by d20 only",
+        "Hint": "Rank players by their mean d20 result. When disabled, the ranking uses the universal index over all dice."
+      },
+      "MinRolls": {
+        "Name": "Minimum rolls for awards",
+        "Hint": "Players with fewer rolls (d20 rolls when ranking by d20) appear in the table but cannot win Luckiest / Unluckiest."
+      },
+      "PostTo": {
+        "Name": "Post results to",
+        "Hint": "Who receives the statistics messages.",
+        "Everyone": "Everyone (public message)",
+        "GM": "GM only (whisper)"
+      },
+      "AnnounceStart": {
+        "Name": "Announce session start in chat",
+        "Hint": "Post a short chat message when tracking starts."
+      },
+      "ArchiveSize": {
+        "Name": "Session archive size",
+        "Hint": "How many finished sessions are kept in the archive."
+      }
+    },
+    "Menu": {
+      "Name": "Sessions and archive",
+      "Label": "Open",
+      "Hint": "Start or stop tracking, post interim statistics and re-post past sessions."
+    },
+    "History": {
+      "Title": "Session Luck Tracker",
+      "GMOnly": "Only a GM can manage luck tracking.",
+      "Current": "Current session",
+      "CurrentMeta": "Tracking since {date} ({duration}) · {players} player(s) · {d20} d20 · avg {mean}",
+      "NoCurrent": "No session is being tracked.",
+      "Start": "Start tracking",
+      "Stop": "Stop and post results",
+      "PostInterim": "Post interim stats",
+      "Reset": "Reset",
+      "Archive": "Archive ({count}/{max})",
+      "Empty": "No archived sessions yet.",
+      "ItemMeta": "{duration} · {players} player(s) · {d20} d20 · avg {mean}",
+      "Post": "Post",
+      "Delete": "Delete",
+      "ClearAll": "Clear archive",
+      "ConfirmStopTitle": "Stop luck tracking?",
+      "ConfirmStopBody": "The session will end, be archived, and its statistics will be posted to chat.",
+      "ConfirmResetTitle": "Reset current session?",
+      "ConfirmResetBody": "All rolls recorded so far in this session will be discarded. Tracking continues.",
+      "ConfirmDeleteTitle": "Delete archived session?",
+      "ConfirmDeleteBody": "Delete the session from {date}? This cannot be undone.",
+      "ConfirmClearTitle": "Clear archive?",
+      "ConfirmClearBody": "All archived sessions will be deleted. This cannot be undone."
+    }
+  }
+}

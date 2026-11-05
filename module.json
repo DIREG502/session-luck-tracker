@@ -1,0 +1,42 @@
+{
+  "id": "session-luck-tracker",
+  "title": "Session Luck Tracker",
+  "description": "Counts every dice roll players make during a game session and posts the luckiest and unluckiest players to chat when the GM ends the session. Works with any system; Pathfinder 2e degree-of-success data is used when available.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/style.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Русский",
+      "path": "lang/ru.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ],
+  "relationships": {
+    "recommends": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "reason": "Optional: Pathfinder 2e degree-of-success data (critical successes / failures) is added to the statistics."
+      }
+    ]
+  }
+}

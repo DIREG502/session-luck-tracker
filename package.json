@@ -1,0 +1,10 @@
+{
+  "name": "session-luck-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development metadata for unit tests only. Not needed by Foundry VTT.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

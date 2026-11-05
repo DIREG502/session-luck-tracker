@@ -3,6 +3,11 @@
   "title": "Session Luck Tracker",
   "description": "Counts every dice roll players make during a game session and posts the luckiest and unluckiest players to chat when the GM ends the session. Works with any system; Pathfinder 2e degree-of-success data is used when available.",
   "version": "1.0.0",
+  "url": "https://github.com/DIREG502/session-luck-tracker",
+  "manifest": "https://github.com/DIREG502/session-luck-tracker/releases/latest/download/module.json",
+  "download": "https://github.com/DIREG502/session-luck-tracker/releases/download/v1.0.0/module.zip",
+  "license": "LICENSE",
+  "readme": "README.md",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
